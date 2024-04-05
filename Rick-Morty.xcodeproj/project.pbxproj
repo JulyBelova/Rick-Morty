@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		140F74E92BC036A00016712A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F74E82BC036A00016712A /* AppCoordinator.swift */; };
 		140F74EB2BC0385A0016712A /* LaunchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */; };
+		1459C7AD2BC040A1008D9177 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7AC2BC040A1008D9177 /* HomeCoordinator.swift */; };
+		1459C7AF2BC04112008D9177 /* HeartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7AE2BC04112008D9177 /* HeartCoordinator.swift */; };
+		1459C7B12BC041B6008D9177 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7B02BC041B6008D9177 /* TabBarController.swift */; };
+		1459C7B32BC04561008D9177 /* CharacterDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */; };
 		14AFEF212BBF478900957DBC /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AFEF202BBF478900957DBC /* LaunchScreen.swift */; };
 		14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */; };
 		14DA02362BBF2C3A00CEC76C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02352BBF2C3A00CEC76C /* SceneDelegate.swift */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		140F74E82BC036A00016712A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCoordinator.swift; sourceTree = "<group>"; };
+		1459C7AC2BC040A1008D9177 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		1459C7AE2BC04112008D9177 /* HeartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartCoordinator.swift; sourceTree = "<group>"; };
+		1459C7B02BC041B6008D9177 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsCoordinator.swift; sourceTree = "<group>"; };
 		14AFEF202BBF478900957DBC /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		14DA02302BBF2C3A00CEC76C /* Rick-Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,9 +73,7 @@
 				14DA02472BBF2E1C00CEC76C /* Application */,
 				14F7313A2BC02F2E009E56BF /* UILayer */,
 				14F731392BC02F04009E56BF /* NavigationLayer */,
-				14DA02372BBF2C3A00CEC76C /* ViewController.swift */,
 				14DA02482BBF2E4300CEC76C /* Resourses */,
-				14AFEF202BBF478900957DBC /* LaunchScreen.swift */,
 			);
 			path = "Rick-Morty";
 			sourceTree = "<group>";
@@ -94,8 +100,8 @@
 		14F731392BC02F04009E56BF /* NavigationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				14F7313C2BC02F57009E56BF /* Coordinators */,
 				14F7313B2BC02F46009E56BF /* Controllers */,
+				14F7313C2BC02F57009E56BF /* Coordinators */,
 			);
 			path = NavigationLayer;
 			sourceTree = "<group>";
@@ -110,6 +116,9 @@
 		14F7313B2BC02F46009E56BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				14AFEF202BBF478900957DBC /* LaunchScreen.swift */,
+				1459C7B02BC041B6008D9177 /* TabBarController.swift */,
+				14DA02372BBF2C3A00CEC76C /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -120,6 +129,9 @@
 				14F7313D2BC02F92009E56BF /* Coordinator.swift */,
 				140F74E82BC036A00016712A /* AppCoordinator.swift */,
 				140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */,
+				1459C7AC2BC040A1008D9177 /* HomeCoordinator.swift */,
+				1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */,
+				1459C7AE2BC04112008D9177 /* HeartCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -197,10 +209,14 @@
 				140F74E92BC036A00016712A /* AppCoordinator.swift in Sources */,
 				140F74EB2BC0385A0016712A /* LaunchScreenCoordinator.swift in Sources */,
 				14AFEF212BBF478900957DBC /* LaunchScreen.swift in Sources */,
+				1459C7B12BC041B6008D9177 /* TabBarController.swift in Sources */,
 				14DA02382BBF2C3A00CEC76C /* ViewController.swift in Sources */,
 				14F7313E2BC02F92009E56BF /* Coordinator.swift in Sources */,
+				1459C7AD2BC040A1008D9177 /* HomeCoordinator.swift in Sources */,
+				1459C7B32BC04561008D9177 /* CharacterDetailsCoordinator.swift in Sources */,
 				14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */,
 				14DA02362BBF2C3A00CEC76C /* SceneDelegate.swift in Sources */,
+				1459C7AF2BC04112008D9177 /* HeartCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

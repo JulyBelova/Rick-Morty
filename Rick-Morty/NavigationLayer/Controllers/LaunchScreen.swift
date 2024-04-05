@@ -44,5 +44,6 @@ final class LaunchScreen: UIViewController {
         UIView.animate(withDuration: 3.0) {
             self.loadingComponentImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         }
+       
     }
 }

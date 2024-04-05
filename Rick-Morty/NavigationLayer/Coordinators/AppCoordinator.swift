@@ -9,7 +9,9 @@ import UIKit
 class AppCoordinator: Coordinator, CoordinatorFinishDelegate {
     
     override func start() {
-        showLaunchScreen()
+        //showLaunchScreen()
+        showTabBar()
+        //showCharacterDetails()
     }
     
     override func finish() {
@@ -18,15 +20,44 @@ class AppCoordinator: Coordinator, CoordinatorFinishDelegate {
 }
 
  //MARK: Navigation methods
-private extension AppCoordinator {
+
+extension AppCoordinator {
     func showLaunchScreen() {
         guard let navigationController = navigationController else { return }
         let launchScreenCoordinator = LaunchScreenCoordinator(type: .launchScreen, navigationController: navigationController, finishDelegate: self)
         addChildCoordinator(launchScreenCoordinator)
         launchScreenCoordinator.start()
     }
-    func showMain() {
+    
+    func showTabBar() {
+        guard let navigationController = navigationController else { return }
         
+        let homeNavigationController = UINavigationController()
+        let homeCoordinator = HomeCoordinator(type: .episodes, navigationController: homeNavigationController)
+        homeNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+        homeCoordinator.finishDelegate = self
+        homeCoordinator.start()
+        
+        let heartNavigationController = UINavigationController()
+        let heartCoordinator = HeartCoordinator(type: .favourites, navigationController: heartNavigationController)
+        heartNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "heart"), tag: 1)
+        heartCoordinator.finishDelegate = self
+        heartCoordinator.start()
+        
+        addChildCoordinator(homeCoordinator)
+        addChildCoordinator(heartCoordinator)
+        
+        let tabBarControllers = [homeNavigationController, heartNavigationController]
+        let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
+        
+        navigationController.pushViewController(tabBarController, animated: true)
+    }
+    
+    func showCharacterDetails() {
+        guard let navigationController = navigationController else { return }
+        let characterDetailsCoordinator = CharacterDetailsCoordinator(type: .favourites, navigationController: navigationController, finishDelegate: self)
+        addChildCoordinator(characterDetailsCoordinator)
+        characterDetailsCoordinator.start()
     }
 }
 

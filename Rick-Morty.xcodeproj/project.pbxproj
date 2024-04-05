@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140F74E92BC036A00016712A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F74E82BC036A00016712A /* AppCoordinator.swift */; };
+		140F74EB2BC0385A0016712A /* LaunchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */; };
 		14AFEF212BBF478900957DBC /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AFEF202BBF478900957DBC /* LaunchScreen.swift */; };
 		14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */; };
 		14DA02362BBF2C3A00CEC76C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02352BBF2C3A00CEC76C /* SceneDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140F74E82BC036A00016712A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCoordinator.swift; sourceTree = "<group>"; };
 		14AFEF202BBF478900957DBC /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		14DA02302BBF2C3A00CEC76C /* Rick-Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,9 +62,9 @@
 		14DA02322BBF2C3A00CEC76C /* Rick-Morty */ = {
 			isa = PBXGroup;
 			children = (
+				14DA02472BBF2E1C00CEC76C /* Application */,
 				14F7313A2BC02F2E009E56BF /* UILayer */,
 				14F731392BC02F04009E56BF /* NavigationLayer */,
-				14DA02472BBF2E1C00CEC76C /* Application */,
 				14DA02372BBF2C3A00CEC76C /* ViewController.swift */,
 				14DA02482BBF2E4300CEC76C /* Resourses */,
 				14AFEF202BBF478900957DBC /* LaunchScreen.swift */,
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				14F7313D2BC02F92009E56BF /* Coordinator.swift */,
+				140F74E82BC036A00016712A /* AppCoordinator.swift */,
+				140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -188,6 +194,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140F74E92BC036A00016712A /* AppCoordinator.swift in Sources */,
+				140F74EB2BC0385A0016712A /* LaunchScreenCoordinator.swift in Sources */,
 				14AFEF212BBF478900957DBC /* LaunchScreen.swift in Sources */,
 				14DA02382BBF2C3A00CEC76C /* ViewController.swift in Sources */,
 				14F7313E2BC02F92009E56BF /* Coordinator.swift in Sources */,

@@ -7,10 +7,10 @@
 
 import UIKit
 class AppCoordinator: Coordinator, CoordinatorFinishDelegate {
-    
+
     override func start() {
-        //showLaunchScreen()
-        showTabBar()
+        showLaunchScreen()
+        //showTabBar()
         //showCharacterDetails()
     }
     
@@ -31,7 +31,6 @@ extension AppCoordinator {
     
     func showTabBar() {
         guard let navigationController = navigationController else { return }
-        
         let homeNavigationController = UINavigationController()
         let homeCoordinator = HomeCoordinator(type: .episodes, navigationController: homeNavigationController)
         homeNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
@@ -64,11 +63,20 @@ extension AppCoordinator {
 extension AppCoordinator {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol) {
         removeChildCoordinator(childCoordinator)
+        
         switch childCoordinator.type {
-        case .launchScreen: 
+        case .launchScreen:
             return
-        default: 
-            navigationController?.popViewController(animated: false)
+//        case .episodes:
+//            navigationController?.viewControllers.removeAll()
+//            showTabBar()
+//        case.characterDetails:
+//            navigationController?.viewControllers.removeAll()
+//            showCharacterDetails()
+//        case.favourites:
+//            navigationController?.viewControllers.removeAll()
+//            showTabBar()
+        default: break
         }
     }
 }

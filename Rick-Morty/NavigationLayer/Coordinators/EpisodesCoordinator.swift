@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  EpisodesCoordinator.swift
 //  Rick-Morty
 //
 //  Created by July Belova on 05.04.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCoordinator: Coordinator {
+class EpisodesCoordinator: Coordinator {
     
     override func start() {
         let vc = ViewController()
@@ -16,6 +16,5 @@ class HomeCoordinator: Coordinator {
     }
     
     override func finish() {
-        print("AppCoordinator finish")
     }
 }

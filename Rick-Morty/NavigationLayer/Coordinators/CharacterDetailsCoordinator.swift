@@ -16,7 +16,6 @@ class CharacterDetailsCoordinator: Coordinator {
     }
     
     override func finish() {
-        print("AppCoordinator finish")
     }
 }
 

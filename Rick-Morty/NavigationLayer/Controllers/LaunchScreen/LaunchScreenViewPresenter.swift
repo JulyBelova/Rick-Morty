@@ -13,7 +13,6 @@ protocol LaunchScreenViewOutput: AnyObject {
 
 class LaunchScreenViewPresenter: LaunchScreenViewOutput {
     
-    //MARK: - Properties
     weak var coordinator: LaunchScreenCoordinator!
     
     init(coordinator: LaunchScreenCoordinator!) {

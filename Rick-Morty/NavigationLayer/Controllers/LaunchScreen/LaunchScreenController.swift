@@ -18,7 +18,6 @@ final class LaunchScreenController: UIViewController {
         self.launchScreenViewOutput = launchScreenViewOutput
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,6 +27,7 @@ final class LaunchScreenController: UIViewController {
         super.viewDidLoad()
         setupUI()
         startAnimationAndGoToMainVC()
+        
     }
     
     //MARK: - Methods
@@ -62,27 +62,8 @@ final class LaunchScreenController: UIViewController {
                 self.loadingComponentImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi*2))
             }, completion: { isFinished in
                 print("End animation")
-                //self.present(ViewController(), animated: true)
-                
-                self.present(TabBarController(tabBarControllers: []), animated: true)
+                self.launchScreenViewOutput.launchScreenViewFinish()
             })
         })
-        launchScreenViewOutput.launchScreenViewFinish()
     }
-    //    func startAnimationAndGoToMain() {
-    //        UIView.animate(withDuration: 3.0) {
-//            self.loadingComponentImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-//        }
-        
-//        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        //rotationAnimation.fromValue = 0.0
-//        rotationAnimation.toValue = Double.pi * 2
-//        rotationAnimation.duration = 3
-//        //rotationAnimation.repeatCount = .infinity
-//        loadingComponentImageView.layer.add(rotationAnimation, forKey: nil)
-//        present(ViewController(), animated: true)
-//       
-//        print(#function)
- //   }
-  
 }

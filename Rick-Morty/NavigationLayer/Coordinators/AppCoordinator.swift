@@ -6,47 +6,45 @@
 //
 
 import UIKit
-class AppCoordinator: Coordinator, CoordinatorFinishDelegate {
+class AppCoordinator: Coordinator {
 
     override func start() {
-        showLaunchScreen()
-        //showTabBar()
+        showLaunchScreenFlow()
+        //showTabBarFlow()
         //showCharacterDetails()
     }
     
     override func finish() {
-        print("AppCoordinator finish")
     }
 }
-
  //MARK: Navigation methods
 
 extension AppCoordinator {
-    func showLaunchScreen() {
+    func showLaunchScreenFlow() {
         guard let navigationController = navigationController else { return }
         let launchScreenCoordinator = LaunchScreenCoordinator(type: .launchScreen, navigationController: navigationController, finishDelegate: self)
         addChildCoordinator(launchScreenCoordinator)
         launchScreenCoordinator.start()
     }
     
-    func showTabBar() {
+    func showTabBarFlow() {
         guard let navigationController = navigationController else { return }
-        let homeNavigationController = UINavigationController()
-        let homeCoordinator = HomeCoordinator(type: .episodes, navigationController: homeNavigationController)
-        homeNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
-        homeCoordinator.finishDelegate = self
-        homeCoordinator.start()
+        let episodesNavigationController = UINavigationController()
+        let episodesCoordinator = EpisodesCoordinator(type: .episodes, navigationController: episodesNavigationController)
+        episodesNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+        episodesCoordinator.finishDelegate = self
+        episodesCoordinator.start()
         
-        let heartNavigationController = UINavigationController()
-        let heartCoordinator = HeartCoordinator(type: .favourites, navigationController: heartNavigationController)
-        heartNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "heart"), tag: 1)
-        heartCoordinator.finishDelegate = self
-        heartCoordinator.start()
+        let favouritesNavigationController = UINavigationController()
+        let favouritesCoordinator = FavouritesCoordinator(type: .favourites, navigationController: favouritesNavigationController)
+        favouritesNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "heart"), tag: 1)
+        favouritesCoordinator.finishDelegate = self
+        favouritesCoordinator.start()
         
-        addChildCoordinator(homeCoordinator)
-        addChildCoordinator(heartCoordinator)
+        addChildCoordinator(episodesCoordinator)
+        addChildCoordinator(favouritesCoordinator)
         
-        let tabBarControllers = [homeNavigationController, heartNavigationController]
+        let tabBarControllers = [episodesNavigationController, favouritesNavigationController]
         let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
         
         navigationController.pushViewController(tabBarController, animated: true)
@@ -54,29 +52,22 @@ extension AppCoordinator {
     
     func showCharacterDetails() {
         guard let navigationController = navigationController else { return }
-        let characterDetailsCoordinator = CharacterDetailsCoordinator(type: .favourites, navigationController: navigationController, finishDelegate: self)
+        let characterDetailsCoordinator = CharacterDetailsCoordinator(type: .characterDetails, navigationController: navigationController, finishDelegate: self)
         addChildCoordinator(characterDetailsCoordinator)
         characterDetailsCoordinator.start()
     }
 }
 
-extension AppCoordinator {
+extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol) {
         removeChildCoordinator(childCoordinator)
         
         switch childCoordinator.type {
         case .launchScreen:
-            return
-//        case .episodes:
-//            navigationController?.viewControllers.removeAll()
-//            showTabBar()
-//        case.characterDetails:
-//            navigationController?.viewControllers.removeAll()
-//            showCharacterDetails()
-//        case.favourites:
-//            navigationController?.viewControllers.removeAll()
-//            showTabBar()
-        default: break
+            navigationController?.viewControllers.removeAll()
+            showTabBarFlow()
+        default:
+            navigationController?.popToRootViewController(animated: false)
         }
     }
 }

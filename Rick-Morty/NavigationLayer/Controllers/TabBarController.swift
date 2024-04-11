@@ -8,7 +8,7 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    
+
     init(tabBarControllers: [UIViewController]) {
         super.init(nibName: nil, bundle: nil)
         for tab in tabBarControllers {
@@ -24,5 +24,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         tabBar.backgroundColor = .white
         tabBar.tintColor = .systemBlue
+        
     }
 }

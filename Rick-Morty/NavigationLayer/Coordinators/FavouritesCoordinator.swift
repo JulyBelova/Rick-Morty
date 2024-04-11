@@ -1,5 +1,5 @@
 //
-//  HeartCoordinator.swift
+//  FavouritesCoordinator.swift
 //  Rick-Morty
 //
 //  Created by July Belova on 05.04.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeartCoordinator: Coordinator {
+class FavouritesCoordinator: Coordinator {
     
     override func start() {
         let vc = ViewController()

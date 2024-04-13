@@ -39,15 +39,21 @@ class EpisodesController: UIViewController {
         logoImageView.contentMode = .scaleAspectFit
         view.addSubview(logoImageView)
         
-        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         searchTextField.placeholder = "Name or episode (ex.S01E01)..."
-        searchTextField.font = UIFont.systemFont(ofSize: 16)
+        searchTextField.font = .Roboto.light.size(of: 16)
+        searchTextField.backgroundColor = .white
+        searchTextField.clipsToBounds = true
+        searchTextField.layer.cornerRadius = 10
+        searchTextField.layer.borderWidth = 2
+        searchTextField.layer.borderColor = UIColor.systemGray5.cgColor
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(searchTextField)
         
         filtersButton.translatesAutoresizingMaskIntoConstraints = false
         filtersButton.setImage(UIImage(systemName: "line.3.horizontal.decrease"), for: .normal)
         filtersButton.setTitle("ADVANCED FILTERS", for: .normal)
-        filtersButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        filtersButton.titleLabel?.font = .Roboto.light.size(of: 14)
         //        filtersButton.setTitleColor(UIColor(red: 33, green: 150, blue: 243, alpha: 1), for: .normal)
         filtersButton.setTitleColor(.blue, for: .normal)
         filtersButton.imageEdgeInsets.left = -150

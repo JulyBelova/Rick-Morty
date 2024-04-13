@@ -39,10 +39,9 @@ class EpisodesController: UIViewController {
         logoImageView.contentMode = .scaleAspectFit
         view.addSubview(logoImageView)
         
-        
         searchTextField.placeholder = "Name or episode (ex.S01E01)..."
         searchTextField.font = .Roboto.light.size(of: 16)
-        searchTextField.backgroundColor = .white
+        searchTextField.backgroundColor = AppColors.accentWhite
         searchTextField.clipsToBounds = true
         searchTextField.layer.cornerRadius = 10
         searchTextField.layer.borderWidth = 2
@@ -54,13 +53,11 @@ class EpisodesController: UIViewController {
         filtersButton.setImage(UIImage(systemName: "line.3.horizontal.decrease"), for: .normal)
         filtersButton.setTitle("ADVANCED FILTERS", for: .normal)
         filtersButton.titleLabel?.font = .Roboto.light.size(of: 14)
-        //        filtersButton.setTitleColor(UIColor(red: 33, green: 150, blue: 243, alpha: 1), for: .normal)
-        filtersButton.setTitleColor(.blue, for: .normal)
+        filtersButton.setTitleColor(AppColors.accentBlue, for: .normal)
         filtersButton.imageEdgeInsets.left = -150
         filtersButton.titleEdgeInsets.left = -20
         filtersButton.tintColor = .systemGray2
-        //filtersButton.backgroundColor = UIColor(red: 227, green: 242, blue: 253, alpha: 1)
-        filtersButton.backgroundColor = .systemGray6
+        filtersButton.backgroundColor = AppColors.accentLightBlue
         filtersButton.layer.cornerRadius = 10
         filtersButton.layer.borderWidth = 2
         filtersButton.layer.borderColor = UIColor.systemGray5.cgColor

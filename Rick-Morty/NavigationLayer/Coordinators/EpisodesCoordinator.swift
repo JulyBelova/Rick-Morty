@@ -10,8 +10,8 @@ import UIKit
 class EpisodesCoordinator: Coordinator {
     
     override func start() {
-        let vc = ViewController()
-        vc.view.backgroundColor = .systemYellow
+        let presenter = EpisodesViewPresenter(coordinator: self)
+        let vc = EpisodesController(episodesViewOutput: presenter)
         navigationController?.pushViewController(vc, animated: true)
     }
     

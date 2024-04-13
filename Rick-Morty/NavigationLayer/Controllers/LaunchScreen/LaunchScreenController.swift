@@ -21,15 +21,12 @@ final class LaunchScreenController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     //MARK: - Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         startAnimationAndGoToMainVC()
-        
     }
-    
     //MARK: - Methods
     func setupUI() {
         view.backgroundColor = .white
@@ -37,6 +34,7 @@ final class LaunchScreenController: UIViewController {
         logoImageView.image = UIImage(named: "Logo")
         logoImageView.contentMode = .scaleAspectFit
         view.addSubview(logoImageView)
+        
         loadingComponentImageView.translatesAutoresizingMaskIntoConstraints = false
         loadingComponentImageView.image = UIImage(named: "LoadingComponent")
         loadingComponentImageView.contentMode = .scaleAspectFit
@@ -47,6 +45,7 @@ final class LaunchScreenController: UIViewController {
             logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 97),
             logoImageView.widthAnchor.constraint(equalToConstant: 312),
             logoImageView.heightAnchor.constraint(equalToConstant: 104),
+            
             loadingComponentImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loadingComponentImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loadingComponentImageView.widthAnchor.constraint(equalToConstant: 200),
@@ -63,6 +62,7 @@ final class LaunchScreenController: UIViewController {
             }, completion: { isFinished in
                 print("End animation")
                 self.launchScreenViewOutput.launchScreenViewFinish()
+               
             })
         })
     }

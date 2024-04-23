@@ -7,57 +7,35 @@
 
 import UIKit
 class AppCoordinator: Coordinator {
-
+    
+    private let factory = SceneFactory.self
+    
     override func start() {
         showLaunchScreenFlow()
-        //showTabBarFlow()
-        //showCharacterDetails()
     }
     
     override func finish() {
     }
 }
- //MARK: Navigation methods
 
+//MARK: - Navigation methods
 extension AppCoordinator {
     func showLaunchScreenFlow() {
         guard let navigationController = navigationController else { return }
-        let launchScreenCoordinator = LaunchScreenCoordinator(type: .launchScreen, navigationController: navigationController, finishDelegate: self)
-        addChildCoordinator(launchScreenCoordinator)
-        launchScreenCoordinator.start()
+        factory.makeLaunchScreenFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
     }
-    
-    func showTabBarFlow() {
+    func showMainFlow() {
         guard let navigationController = navigationController else { return }
-        let episodesNavigationController = UINavigationController()
-        let episodesCoordinator = EpisodesCoordinator(type: .episodes, navigationController: episodesNavigationController)
-        episodesNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
-        episodesCoordinator.finishDelegate = self
-        episodesCoordinator.start()
-        
-        let favouritesNavigationController = UINavigationController()
-        let favouritesCoordinator = FavouritesCoordinator(type: .favourites, navigationController: favouritesNavigationController)
-        favouritesNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "heart"), tag: 1)
-        favouritesCoordinator.finishDelegate = self
-        favouritesCoordinator.start()
-        
-        addChildCoordinator(episodesCoordinator)
-        addChildCoordinator(favouritesCoordinator)
-        
-        let tabBarControllers = [episodesNavigationController, favouritesNavigationController]
-        let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
-        
+        let tabBarController = factory.makeMainFlow(coordinator: self, finishDelegate: self)
         navigationController.pushViewController(tabBarController, animated: true)
     }
-    
     func showCharacterDetails() {
         guard let navigationController = navigationController else { return }
-        let characterDetailsCoordinator = CharacterDetailsCoordinator(type: .characterDetails, navigationController: navigationController, finishDelegate: self)
-        addChildCoordinator(characterDetailsCoordinator)
-        characterDetailsCoordinator.start()
+        factory.makeCharacterDetails(coordinator: self, finishDelegate: self, navigationController: navigationController)
     }
 }
 
+//MARK: - CoordinatorFinishDelegate
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol) {
         removeChildCoordinator(childCoordinator)
@@ -65,7 +43,7 @@ extension AppCoordinator: CoordinatorFinishDelegate {
         switch childCoordinator.type {
         case .launchScreen:
             navigationController?.viewControllers.removeAll()
-            showTabBarFlow()
+            showMainFlow()
         default:
             navigationController?.popToRootViewController(animated: false)
         }

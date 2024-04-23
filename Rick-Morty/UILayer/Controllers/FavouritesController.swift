@@ -8,13 +8,17 @@
 import UIKit
 
 class FavouritesController: UIViewController {
-
+    
+    //MARK: - Properties
     private let titleLabel = UILabel()
     
+    //MARK: - Init
+    //MARK: - Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()    }
     
+    //MARK: - Methods - setupUI
     func setupUI() {
         view.backgroundColor = .white
         titleLabel.text = "Favourites episodes"

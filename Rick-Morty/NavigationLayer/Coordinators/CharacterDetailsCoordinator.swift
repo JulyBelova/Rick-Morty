@@ -7,8 +7,10 @@
 
 import UIKit
 
+//MARK: - CharacterDetailsCoordinator
 class CharacterDetailsCoordinator: Coordinator {
     
+    //MARK: - Methods
     override func start() {
         let vc = ViewController()
         vc.view.backgroundColor = .systemGreen

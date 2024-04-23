@@ -7,8 +7,10 @@
 
 import UIKit
 
+//MARK: - FavouritesCoordinator
 class FavouritesCoordinator: Coordinator {
     
+    //MARK: - Methods
     override func start() {
         let vc = ViewController()
         vc.view.backgroundColor = .systemBlue

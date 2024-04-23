@@ -7,8 +7,10 @@
 
 import UIKit
 
+//MARK: - EpisodesCoordinator
 class EpisodesCoordinator: Coordinator {
     
+    //MARK: - Methods
     override func start() {
         let presenter = EpisodesViewPresenter(coordinator: self)
         let vc = EpisodesController(episodesViewOutput: presenter)

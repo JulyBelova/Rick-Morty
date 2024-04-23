@@ -7,11 +7,15 @@
 
 import UIKit
 
+//MARK: - LaunchScreenCoordinator
 class LaunchScreenCoordinator: Coordinator {
-
+    
+    //MARK: - Properties
+    private let factory = SceneFactory.self
+    
+    //MARK: - Methods
     override func start() {
-        let presenter = LaunchScreenViewPresenter(coordinator: self)
-        let vc = LaunchScreenController(launchScreenViewOutput: presenter)
+        let vc = factory.makeLaunchScreenScene(coordinator: self)
         navigationController?.pushViewController(vc, animated: true)
     }
     

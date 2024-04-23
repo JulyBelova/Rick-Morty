@@ -8,7 +8,8 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
+    
+    //MARK: - Init
     init(tabBarControllers: [UIViewController]) {
         super.init(nibName: nil, bundle: nil)
         for tab in tabBarControllers {
@@ -16,6 +17,7 @@ class TabBarController: UITabBarController {
         }
     }
     
+    //MARK: - Live cycle
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -31,10 +31,11 @@
 		1459C7B12BC041B6008D9177 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7B02BC041B6008D9177 /* TabBarController.swift */; };
 		1459C7B32BC04561008D9177 /* CharacterDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */; };
 		147023452BCA9FF100E88E38 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147023442BCA9FF100E88E38 /* UIColor + Extension.swift */; };
-		147023472BCAA17B00E88E38 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147023462BCAA17B00E88E38 /* AppColors.swift */; };
 		1470C9242BC859330048E8E8 /* EpisodesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470C9232BC859330048E8E8 /* EpisodesViewPresenter.swift */; };
 		1470C9262BC86F960048E8E8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470C9252BC86F960048E8E8 /* CollectionViewCell.swift */; };
 		14AFEF212BBF478900957DBC /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AFEF202BBF478900957DBC /* LaunchScreenController.swift */; };
+		14CD32EA2BCD5C0400D74E59 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD32E92BCD5C0400D74E59 /* UserStorage.swift */; };
+		14CD32EC2BCD5E6A00D74E59 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD32EB2BCD5E6A00D74E59 /* SceneFactory.swift */; };
 		14D3A0E82BC1E8A30024F389 /* CharacterDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */; };
 		14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */; };
 		14DA02362BBF2C3A00CEC76C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02352BBF2C3A00CEC76C /* SceneDelegate.swift */; };
@@ -69,10 +70,11 @@
 		1459C7B02BC041B6008D9177 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsCoordinator.swift; sourceTree = "<group>"; };
 		147023442BCA9FF100E88E38 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
-		147023462BCAA17B00E88E38 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		1470C9232BC859330048E8E8 /* EpisodesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewPresenter.swift; sourceTree = "<group>"; };
 		1470C9252BC86F960048E8E8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		14AFEF202BBF478900957DBC /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		14CD32E92BCD5C0400D74E59 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		14CD32EB2BCD5E6A00D74E59 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 		14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsController.swift; sourceTree = "<group>"; };
 		14DA02302BBF2C3A00CEC76C /* Rick-Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,11 +143,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		1470C9222BC859200048E8E8 /* New Group */ = {
+		1470C9222BC859200048E8E8 /* SceneFactory */ = {
 			isa = PBXGroup;
 			children = (
+				14CD32EB2BCD5E6A00D74E59 /* SceneFactory.swift */,
 			);
-			path = "New Group";
+			path = SceneFactory;
 			sourceTree = "<group>";
 		};
 		147FF39D2BC8510D0019179C /* Episodes */ = {
@@ -156,6 +159,14 @@
 				1470C9232BC859330048E8E8 /* EpisodesViewPresenter.swift */,
 			);
 			path = Episodes;
+			sourceTree = "<group>";
+		};
+		14CD32E82BCD5BD100D74E59 /* ServicesLayer */ = {
+			isa = PBXGroup;
+			children = (
+				14CD32E92BCD5C0400D74E59 /* UserStorage.swift */,
+			);
+			path = ServicesLayer;
 			sourceTree = "<group>";
 		};
 		14DA02272BBF2C3A00CEC76C = {
@@ -177,6 +188,7 @@
 		14DA02322BBF2C3A00CEC76C /* Rick-Morty */ = {
 			isa = PBXGroup;
 			children = (
+				14CD32E82BCD5BD100D74E59 /* ServicesLayer */,
 				14DA02472BBF2E1C00CEC76C /* Application */,
 				14F7313A2BC02F2E009E56BF /* UILayer */,
 				14F731392BC02F04009E56BF /* NavigationLayer */,
@@ -197,7 +209,6 @@
 		14DA02482BBF2E4300CEC76C /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
-				147023462BCAA17B00E88E38 /* AppColors.swift */,
 				142D9B3D2BCA9754009CE792 /* Extensions */,
 				1427BFD32BCA911D006E3C14 /* Fonts */,
 				14DA023C2BBF2C3C00CEC76C /* Assets.xcassets */,
@@ -210,7 +221,6 @@
 		14F731392BC02F04009E56BF /* NavigationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				14F7313B2BC02F46009E56BF /* Controllers */,
 				14F7313C2BC02F57009E56BF /* Coordinators */,
 			);
 			path = NavigationLayer;
@@ -219,6 +229,7 @@
 		14F7313A2BC02F2E009E56BF /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				14F7313B2BC02F46009E56BF /* Controllers */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -226,7 +237,7 @@
 		14F7313B2BC02F46009E56BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1470C9222BC859200048E8E8 /* New Group */,
+				1470C9222BC859200048E8E8 /* SceneFactory */,
 				147FF39D2BC8510D0019179C /* Episodes */,
 				142B6BE72BC06A65000C8051 /* LaunchScreen */,
 				14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */,
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142D9B3F2BCA977F009CE792 /* UIFont + Extension.swift in Sources */,
+				14CD32EC2BCD5E6A00D74E59 /* SceneFactory.swift in Sources */,
 				140F74E92BC036A00016712A /* AppCoordinator.swift in Sources */,
 				1470C9242BC859330048E8E8 /* EpisodesViewPresenter.swift in Sources */,
 				14D3A0E82BC1E8A30024F389 /* CharacterDetailsController.swift in Sources */,
@@ -344,9 +356,9 @@
 				14DA02382BBF2C3A00CEC76C /* ViewController.swift in Sources */,
 				14F7313E2BC02F92009E56BF /* Coordinator.swift in Sources */,
 				147023452BCA9FF100E88E38 /* UIColor + Extension.swift in Sources */,
+				14CD32EA2BCD5C0400D74E59 /* UserStorage.swift in Sources */,
 				1459C7AD2BC040A1008D9177 /* EpisodesCoordinator.swift in Sources */,
 				1459C7B32BC04561008D9177 /* CharacterDetailsCoordinator.swift in Sources */,
-				147023472BCAA17B00E88E38 /* AppColors.swift in Sources */,
 				1470C9262BC86F960048E8E8 /* CollectionViewCell.swift in Sources */,
 				142B6BE92BC06B0D000C8051 /* LaunchScreenViewPresenter.swift in Sources */,
 				14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */,

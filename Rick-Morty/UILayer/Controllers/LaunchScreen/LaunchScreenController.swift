@@ -8,6 +8,7 @@
 import UIKit
 
 final class LaunchScreenController: UIViewController {
+    
     //MARK: - Properties
     private let logoImageView = UIImageView()
     private let loadingComponentImageView = UIImageView()
@@ -21,13 +22,15 @@ final class LaunchScreenController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     //MARK: - Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         startAnimationAndGoToMainVC()
     }
-    //MARK: - Methods
+    
+    //MARK: - Methods - setupUI
     func setupUI() {
         view.backgroundColor = .white
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +55,7 @@ final class LaunchScreenController: UIViewController {
             loadingComponentImageView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
-    
+    //MARK: - Animation
     func startAnimationAndGoToMainVC() {
         UIView.animate(withDuration: 1.5, delay: 0.0, options: .curveLinear, animations: {
             self.loadingComponentImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
@@ -62,7 +65,6 @@ final class LaunchScreenController: UIViewController {
             }, completion: { isFinished in
                 print("End animation")
                 self.launchScreenViewOutput.launchScreenViewFinish()
-               
             })
         })
     }

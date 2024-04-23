@@ -8,6 +8,7 @@
 import UIKit
 
 class EpisodesController: UIViewController {
+    
     //MARK: - Properties
     private let logoImageView = UIImageView()
     private var searchTextField = UISearchTextField()
@@ -31,38 +32,13 @@ class EpisodesController: UIViewController {
         setupUI()
     }
     
-    //MARK: - Methods
+    //MARK: - Methods - setupUI
     func setupUI() {
         view.backgroundColor = .white
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "Logo")
-        logoImageView.contentMode = .scaleAspectFit
-        view.addSubview(logoImageView)
         
-        searchTextField.placeholder = "Name or episode (ex.S01E01)..."
-        searchTextField.font = .Roboto.light.size(of: 16)
-        searchTextField.backgroundColor = AppColors.accentWhite
-        searchTextField.clipsToBounds = true
-        searchTextField.layer.cornerRadius = 10
-        searchTextField.layer.borderWidth = 2
-        searchTextField.layer.borderColor = UIColor.systemGray5.cgColor
-        searchTextField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(searchTextField)
-        
-        filtersButton.translatesAutoresizingMaskIntoConstraints = false
-        filtersButton.setImage(UIImage(systemName: "line.3.horizontal.decrease"), for: .normal)
-        filtersButton.setTitle("ADVANCED FILTERS", for: .normal)
-        filtersButton.titleLabel?.font = .Roboto.light.size(of: 14)
-        filtersButton.setTitleColor(AppColors.accentBlue, for: .normal)
-        filtersButton.imageEdgeInsets.left = -150
-        filtersButton.titleEdgeInsets.left = -20
-        filtersButton.tintColor = .systemGray2
-        filtersButton.backgroundColor = AppColors.accentLightBlue
-        filtersButton.layer.cornerRadius = 10
-        filtersButton.layer.borderWidth = 2
-        filtersButton.layer.borderColor = UIColor.systemGray5.cgColor
-        filtersButton.clipsToBounds = true
-        view.addSubview(filtersButton)
+        setupLogoImageView()
+        setupFiltersButton()
+        setupSearchTextField()
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -74,20 +50,6 @@ class EpisodesController: UIViewController {
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 57),
-            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            searchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
-            searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            searchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            searchTextField.heightAnchor.constraint(equalToConstant: 56),
-            
-            filtersButton.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20),
-            filtersButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            filtersButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            filtersButton.heightAnchor.constraint(equalToConstant: 56),
-            
             collectionView.topAnchor.constraint(equalTo: filtersButton.bottomAnchor, constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -95,8 +57,64 @@ class EpisodesController: UIViewController {
         ])
     }
 }
+// MARK: - extension
+extension EpisodesController {
+    
+    func setupLogoImageView() {
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.image = UIImage(named: "Logo")
+        logoImageView.contentMode = .scaleAspectFit
+        view.addSubview(logoImageView)
+        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 57),
+            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+    }
+    
+    func setupFiltersButton() {
+        searchTextField.placeholder = "Name or episode (ex.S01E01)..."
+        searchTextField.font = .Roboto.light.size(of: 16)
+        searchTextField.backgroundColor = AppColors.accentWhite
+        searchTextField.clipsToBounds = true
+        searchTextField.layer.cornerRadius = 10
+        searchTextField.layer.borderWidth = 2
+        searchTextField.layer.borderColor = UIColor.systemGray5.cgColor
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(searchTextField)
+        NSLayoutConstraint.activate([
+            searchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
+            searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            searchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            searchTextField.heightAnchor.constraint(equalToConstant: 56)
+        ])
+    }
+    
+    func setupSearchTextField() {
+        filtersButton.translatesAutoresizingMaskIntoConstraints = false
+        filtersButton.setImage(UIImage(systemName: "line.3.horizontal.decrease"), for: .normal)
+        filtersButton.tintColor = AppColors.accentGrey
+        filtersButton.setTitle("ADVANCED FILTERS", for: .normal)
+        filtersButton.titleLabel?.font = .Roboto.regular.size(of: 14)
+        filtersButton.setTitleColor(AppColors.accentBlue, for: .normal)
+        filtersButton.imageEdgeInsets.left = -180
+        filtersButton.titleEdgeInsets.left = -20
+        filtersButton.backgroundColor = AppColors.accentLightBlue
+        filtersButton.layer.cornerRadius = 10
+        filtersButton.layer.borderWidth = 2
+        filtersButton.layer.borderColor = UIColor.systemGray5.cgColor
+        filtersButton.clipsToBounds = true
+        view.addSubview(filtersButton)
+        NSLayoutConstraint.activate([
+            filtersButton.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20),
+            filtersButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            filtersButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            filtersButton.heightAnchor.constraint(equalToConstant: 56)
+        ])
+    }
+}
 
-// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+// MARK: - UICollectionViewDataSource
 extension EpisodesController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         5

@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
-    private let imageCharacterImageView = UIImageView()
+    private var imageCharacterImageView = UIImageView()
     private let nameCharacterLabel = UILabel()
     private let backgroundGreyImageView = UIImageView()
     private let monitorImageView = UIImageView()
@@ -44,6 +44,11 @@ class CollectionViewCell: UICollectionViewCell {
         setupNameEpisodeLabel()
         setuplikeButton()
     }
+//    //MARK: - Methods - configure
+//    func configure(with imageCharacter: String, nameCharacter: String, episode: String) {
+//        imageCharacterImageView. = UIImageView(named: imageCharacter)!
+//        self.nameCharacterLabel =
+//    }
 }
 
 extension CollectionViewCell {
@@ -51,14 +56,16 @@ extension CollectionViewCell {
     //MARK: - Image
     func setupImageView() {
         imageCharacterImageView.translatesAutoresizingMaskIntoConstraints = false
-        imageCharacterImageView.backgroundColor = AppColors.accentLightBlue
-        imageCharacterImageView.contentMode = .scaleAspectFit
+        imageCharacterImageView.image = UIImage(named: "1")
+        imageCharacterImageView.contentMode = .scaleAspectFill
+        imageCharacterImageView.clipsToBounds = true
         contentView.addSubview(imageCharacterImageView)
         
         NSLayoutConstraint.activate([
             imageCharacterImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageCharacterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageCharacterImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            imageCharacterImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageCharacterImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75)
         ])
     }
     //MARK: - Name
@@ -74,7 +81,6 @@ extension CollectionViewCell {
             nameCharacterLabel.topAnchor.constraint(equalTo: imageCharacterImageView.bottomAnchor, constant: 16),
             nameCharacterLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             nameCharacterLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            nameCharacterLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     //MARK: - BackgroundGrey
@@ -137,7 +143,6 @@ extension CollectionViewCell {
     func setuplikeButton() {
         likeButton.setImage(UIImage(named: "Heart"), for: .normal)
         likeButton.setImage(UIImage(named: "RedHeart"), for: .highlighted)
-        likeButton.contentMode = .scaleAspectFit
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(likeButton)
         

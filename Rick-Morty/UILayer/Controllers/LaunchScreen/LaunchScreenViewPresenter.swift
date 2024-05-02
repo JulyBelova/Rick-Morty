@@ -10,7 +10,6 @@ import Foundation
 protocol LaunchScreenViewOutput: AnyObject {
     func launchScreenViewFinish()
 }
-
 class LaunchScreenViewPresenter: LaunchScreenViewOutput {
     
     weak var coordinator: LaunchScreenCoordinator!

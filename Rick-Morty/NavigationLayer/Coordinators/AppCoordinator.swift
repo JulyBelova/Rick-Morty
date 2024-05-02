@@ -29,10 +29,6 @@ extension AppCoordinator {
         let tabBarController = factory.makeMainFlow(coordinator: self, finishDelegate: self)
         navigationController.pushViewController(tabBarController, animated: true)
     }
-    func showCharacterDetails() {
-        guard let navigationController = navigationController else { return }
-        factory.makeCharacterDetails(coordinator: self, finishDelegate: self, navigationController: navigationController)
-    }
 }
 
 //MARK: - CoordinatorFinishDelegate

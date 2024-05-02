@@ -16,16 +16,14 @@ class TabBarController: UITabBarController {
             self.addChild(tab)
         }
     }
-    
-    //MARK: - Live cycle
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.backgroundColor = .white
         tabBar.tintColor = .systemBlue
-        
     }
 }

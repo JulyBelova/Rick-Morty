@@ -37,8 +37,8 @@ class EpisodesController: UIViewController {
         view.backgroundColor = .white
         
         setupLogoImageView()
-        setupFiltersButton()
         setupSearchTextField()
+        setupFiltersButton()
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -72,7 +72,7 @@ extension EpisodesController {
         ])
     }
     
-    func setupFiltersButton() {
+    func setupSearchTextField() {
         searchTextField.placeholder = "Name or episode (ex.S01E01)..."
         searchTextField.font = .Roboto.light.size(of: 16)
         searchTextField.backgroundColor = AppColors.accentWhite
@@ -90,7 +90,7 @@ extension EpisodesController {
         ])
     }
     
-    func setupSearchTextField() {
+    func setupFiltersButton(){
         filtersButton.translatesAutoresizingMaskIntoConstraints = false
         filtersButton.setImage(UIImage(systemName: "line.3.horizontal.decrease"), for: .normal)
         filtersButton.tintColor = AppColors.accentGrey
@@ -123,6 +123,17 @@ extension EpisodesController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewCell.self), for: indexPath) as! CollectionViewCell
         //cell.backgroundColor = .systemPink
         return cell
+    }
+}
+// MARK: - UICollectionViewDelegate
+extension EpisodesController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+      
+        navigationController?.show(CharacterDetailsController(), sender: true)
+        
+        collectionView.reloadData()
+
     }
 }
 // MARK: - UICollectionViewDelegateFlowLayout

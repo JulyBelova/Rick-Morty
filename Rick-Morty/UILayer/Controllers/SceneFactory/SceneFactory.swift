@@ -14,10 +14,12 @@ struct SceneFactory {
         let launchScreenCoordinator = LaunchScreenCoordinator(type: .launchScreen, navigationController: navigationController, finishDelegate: finishDelegate)
         coordinator.addChildCoordinator(launchScreenCoordinator)
         launchScreenCoordinator.start()
+        print(#function)
     }
     static func makeLaunchScreenScene(coordinator: LaunchScreenCoordinator) -> LaunchScreenController {
         let presenter = LaunchScreenViewPresenter(coordinator: coordinator)
         let vc = LaunchScreenController(launchScreenViewOutput: presenter)
+        print(#function)
         return vc
     }
     
@@ -40,13 +42,19 @@ struct SceneFactory {
         
         let tabBarControllers = [episodesNavigationController, favouritesNavigationController]
         let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
+        print(#function)
         return tabBarController
     }
-    
-    //MARK: - Character Details
-    static func makeCharacterDetails(coordinator: AppCoordinator, finishDelegate: CoordinatorFinishDelegate, navigationController: UINavigationController) {
-        let characterDetailsCoordinator = CharacterDetailsCoordinator(type: .characterDetails, navigationController: navigationController, finishDelegate: finishDelegate)
-        coordinator.addChildCoordinator(characterDetailsCoordinator)
-        characterDetailsCoordinator.start()
+    static func makeEpisodes(coordinator: EpisodesCoordinator) -> EpisodesController {
+        let presenter = EpisodesViewPresenter(coordinator: coordinator)
+        let vc = EpisodesController(episodesViewOutput: presenter)
+        print(#function)
+        return vc
+    }
+    static func makeFavourites(coordinator: FavouritesCoordinator) -> FavouritesController {
+        let presenter = FavouritesViewPresenter(coordinator: coordinator)
+        let vc = FavouritesController(favouritesViewOutput: presenter)
+        print(#function)
+        return vc
     }
 }

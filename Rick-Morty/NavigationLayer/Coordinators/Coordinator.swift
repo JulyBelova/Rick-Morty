@@ -8,10 +8,7 @@
 import UIKit
 
 enum CoordinatorType {
-    case launchScreen
-    case episodes
-    case characterDetails
-    case favourites
+    case launchScreen, episodes, favourites
 }
 
 protocol CoordinatorProtocol: AnyObject {
@@ -32,6 +29,13 @@ extension CoordinatorProtocol {
         childCoordinators = childCoordinators.filter{ $0 !== childCoordinator }
     }
 }
+
+//extension CoordinatorProtocol {
+//    func finish() {
+//        childCoordinators.removeAll()
+//        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+//    }
+//}
 
 protocol CoordinatorFinishDelegate: AnyObject {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol)
@@ -54,6 +58,7 @@ class Coordinator: CoordinatorProtocol {
         self.childCoordinators = childCoordinators
         self.type = type
         self.navigationController = navigationController
+        navigationController.setNavigationBarHidden(true, animated: true)
         self.finishDelegate = finishDelegate
     }
     

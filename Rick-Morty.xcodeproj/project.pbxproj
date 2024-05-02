@@ -29,12 +29,16 @@
 		1459C7AD2BC040A1008D9177 /* EpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7AC2BC040A1008D9177 /* EpisodesCoordinator.swift */; };
 		1459C7AF2BC04112008D9177 /* FavouritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7AE2BC04112008D9177 /* FavouritesCoordinator.swift */; };
 		1459C7B12BC041B6008D9177 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7B02BC041B6008D9177 /* TabBarController.swift */; };
-		1459C7B32BC04561008D9177 /* CharacterDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */; };
 		147023452BCA9FF100E88E38 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147023442BCA9FF100E88E38 /* UIColor + Extension.swift */; };
 		1470C9242BC859330048E8E8 /* EpisodesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470C9232BC859330048E8E8 /* EpisodesViewPresenter.swift */; };
 		1470C9262BC86F960048E8E8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470C9252BC86F960048E8E8 /* CollectionViewCell.swift */; };
 		14AFEF212BBF478900957DBC /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AFEF202BBF478900957DBC /* LaunchScreenController.swift */; };
-		14CD32EA2BCD5C0400D74E59 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD32E92BCD5C0400D74E59 /* UserStorage.swift */; };
+		14B4E4742BDAEA7100F28861 /* FavouritesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E4732BDAEA7100F28861 /* FavouritesViewPresenter.swift */; };
+		14B4E4792BDEDF4400F28861 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E4782BDEDF4400F28861 /* EpisodeViewModel.swift */; };
+		14B4E47D2BDEDF7D00F28861 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E47C2BDEDF7D00F28861 /* EpisodeModel.swift */; };
+		14B4E47F2BDEE1CD00F28861 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E47E2BDEE1CD00F28861 /* NetworkService.swift */; };
+		14B4E4812BDFACF200F28861 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4E4802BDFACF200F28861 /* DetailsTableViewCell.swift */; };
+		14CD32EA2BCD5C0400D74E59 /* EpisodeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD32E92BCD5C0400D74E59 /* EpisodeStorage.swift */; };
 		14CD32EC2BCD5E6A00D74E59 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD32EB2BCD5E6A00D74E59 /* SceneFactory.swift */; };
 		14D3A0E82BC1E8A30024F389 /* CharacterDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */; };
 		14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA02332BBF2C3A00CEC76C /* AppDelegate.swift */; };
@@ -68,12 +72,16 @@
 		1459C7AC2BC040A1008D9177 /* EpisodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCoordinator.swift; sourceTree = "<group>"; };
 		1459C7AE2BC04112008D9177 /* FavouritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesCoordinator.swift; sourceTree = "<group>"; };
 		1459C7B02BC041B6008D9177 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsCoordinator.swift; sourceTree = "<group>"; };
 		147023442BCA9FF100E88E38 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		1470C9232BC859330048E8E8 /* EpisodesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewPresenter.swift; sourceTree = "<group>"; };
 		1470C9252BC86F960048E8E8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		14AFEF202BBF478900957DBC /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
-		14CD32E92BCD5C0400D74E59 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		14B4E4732BDAEA7100F28861 /* FavouritesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewPresenter.swift; sourceTree = "<group>"; };
+		14B4E4782BDEDF4400F28861 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
+		14B4E47C2BDEDF7D00F28861 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		14B4E47E2BDEE1CD00F28861 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		14B4E4802BDFACF200F28861 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		14CD32E92BCD5C0400D74E59 /* EpisodeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeStorage.swift; sourceTree = "<group>"; };
 		14CD32EB2BCD5E6A00D74E59 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 		14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsController.swift; sourceTree = "<group>"; };
 		14DA02302BBF2C3A00CEC76C /* Rick-Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,10 +169,45 @@
 			path = Episodes;
 			sourceTree = "<group>";
 		};
+		14B4E4722BDAEA4D00F28861 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				142B6BEC2BC17353000C8051 /* FavouritesController.swift */,
+				14B4E4732BDAEA7100F28861 /* FavouritesViewPresenter.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		14B4E4752BDED65D00F28861 /* CharacterDetails */ = {
+			isa = PBXGroup;
+			children = (
+				14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */,
+				14B4E4802BDFACF200F28861 /* DetailsTableViewCell.swift */,
+			);
+			path = CharacterDetails;
+			sourceTree = "<group>";
+		};
+		14B4E47A2BDEDF4B00F28861 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14B4E4782BDEDF4400F28861 /* EpisodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14B4E47B2BDEDF5F00F28861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14B4E47C2BDEDF7D00F28861 /* EpisodeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		14CD32E82BCD5BD100D74E59 /* ServicesLayer */ = {
 			isa = PBXGroup;
 			children = (
-				14CD32E92BCD5C0400D74E59 /* UserStorage.swift */,
+				14CD32E92BCD5C0400D74E59 /* EpisodeStorage.swift */,
+				14B4E47E2BDEE1CD00F28861 /* NetworkService.swift */,
 			);
 			path = ServicesLayer;
 			sourceTree = "<group>";
@@ -229,6 +272,8 @@
 		14F7313A2BC02F2E009E56BF /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				14B4E47B2BDEDF5F00F28861 /* Model */,
+				14B4E47A2BDEDF4B00F28861 /* ViewModel */,
 				14F7313B2BC02F46009E56BF /* Controllers */,
 			);
 			path = UILayer;
@@ -240,8 +285,8 @@
 				1470C9222BC859200048E8E8 /* SceneFactory */,
 				147FF39D2BC8510D0019179C /* Episodes */,
 				142B6BE72BC06A65000C8051 /* LaunchScreen */,
-				14D3A0E72BC1E8A30024F389 /* CharacterDetailsController.swift */,
-				142B6BEC2BC17353000C8051 /* FavouritesController.swift */,
+				14B4E4752BDED65D00F28861 /* CharacterDetails */,
+				14B4E4722BDAEA4D00F28861 /* Favourites */,
 				1459C7B02BC041B6008D9177 /* TabBarController.swift */,
 				14DA02372BBF2C3A00CEC76C /* ViewController.swift */,
 			);
@@ -254,7 +299,6 @@
 				14F7313D2BC02F92009E56BF /* Coordinator.swift */,
 				140F74E82BC036A00016712A /* AppCoordinator.swift */,
 				140F74EA2BC0385A0016712A /* LaunchScreenCoordinator.swift */,
-				1459C7B22BC04561008D9177 /* CharacterDetailsCoordinator.swift */,
 				1459C7AC2BC040A1008D9177 /* EpisodesCoordinator.swift */,
 				1459C7AE2BC04112008D9177 /* FavouritesCoordinator.swift */,
 			);
@@ -351,20 +395,24 @@
 				14D3A0E82BC1E8A30024F389 /* CharacterDetailsController.swift in Sources */,
 				142B6BED2BC17353000C8051 /* FavouritesController.swift in Sources */,
 				140F74EB2BC0385A0016712A /* LaunchScreenCoordinator.swift in Sources */,
+				14B4E4742BDAEA7100F28861 /* FavouritesViewPresenter.swift in Sources */,
 				14AFEF212BBF478900957DBC /* LaunchScreenController.swift in Sources */,
 				1459C7B12BC041B6008D9177 /* TabBarController.swift in Sources */,
 				14DA02382BBF2C3A00CEC76C /* ViewController.swift in Sources */,
 				14F7313E2BC02F92009E56BF /* Coordinator.swift in Sources */,
 				147023452BCA9FF100E88E38 /* UIColor + Extension.swift in Sources */,
-				14CD32EA2BCD5C0400D74E59 /* UserStorage.swift in Sources */,
+				14CD32EA2BCD5C0400D74E59 /* EpisodeStorage.swift in Sources */,
 				1459C7AD2BC040A1008D9177 /* EpisodesCoordinator.swift in Sources */,
-				1459C7B32BC04561008D9177 /* CharacterDetailsCoordinator.swift in Sources */,
 				1470C9262BC86F960048E8E8 /* CollectionViewCell.swift in Sources */,
 				142B6BE92BC06B0D000C8051 /* LaunchScreenViewPresenter.swift in Sources */,
 				14DA02342BBF2C3A00CEC76C /* AppDelegate.swift in Sources */,
 				142B6BEB2BC172B1000C8051 /* EpisodesController.swift in Sources */,
+				14B4E4812BDFACF200F28861 /* DetailsTableViewCell.swift in Sources */,
 				14DA02362BBF2C3A00CEC76C /* SceneDelegate.swift in Sources */,
+				14B4E4792BDEDF4400F28861 /* EpisodeViewModel.swift in Sources */,
 				1459C7AF2BC04112008D9177 /* FavouritesCoordinator.swift in Sources */,
+				14B4E47F2BDEE1CD00F28861 /* NetworkService.swift in Sources */,
+				14B4E47D2BDEDF7D00F28861 /* EpisodeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

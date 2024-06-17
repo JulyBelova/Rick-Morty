@@ -25,10 +25,10 @@ class DetailsTableViewCell: UITableViewCell {
     }
     
     //MARK: - Configure
-    func configure(with info: EpisodeModel) {
-//        titleLabel.text = info.result
-//        detailsTextLabel.text = info.result
-    }
+//    func configure(with info: EpisodeModel) {
+////        titleLabel.text = info.result
+////        detailsTextLabel.text = info.result
+//    }
     
     //MARK: - Title
     func setupTitleLabel() {
@@ -43,7 +43,6 @@ class DetailsTableViewCell: UITableViewCell {
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     

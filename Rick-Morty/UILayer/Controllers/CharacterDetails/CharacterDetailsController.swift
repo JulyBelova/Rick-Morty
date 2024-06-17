@@ -6,19 +6,17 @@
 //
 
 import UIKit
-protocol CameraDelegate: AnyObject {
-    func cameraButtonTap()
-}
+
 class CharacterDetailsController: UIViewController {
     
     //MARK: - Properties
+    private var logoImageView = UIImageView()
     private var imageCharacterImageView = UIImageView()
     private let cameraButton = UIButton()
     private let nameCharacterLabel = UILabel()
     private let titleLabel = UILabel()
     private let tableView = UITableView()
-
-    weak var delegate: CameraDelegate?
+    var viewModel: DetailsViewModelDelegate? 
 //    var characterDetailsViewOutput: CharacterDetailsViewOutput!
     
 //    //MARK: - Init
@@ -37,15 +35,15 @@ class CharacterDetailsController: UIViewController {
     //MARK: - Methods - setupUI
     func setupUI() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.backButtonTitle = "GO BACK"
+        
+        setupLogoImageView()
         setupImageView()
         setupCameraButton()
         setupNameCharacterLabel()
         setupTitleLabel()
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.tintColor = .black
-        navigationItem.leftBarButtonItems = makeLeftBarButtonItems()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"logo-black"), style: .plain, target: self, action: nil)
-        
+    
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
         tableView.showsVerticalScrollIndicator = false
@@ -59,18 +57,23 @@ class CharacterDetailsController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
-    func makeLeftBarButtonItems() -> [UIBarButtonItem] {
-        let arrowLeftButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(goBackToMain))
-        let titleButtonItem = UIBarButtonItem(title: "GO BACK")
-        return [arrowLeftButtonItem, titleButtonItem]
-    }
-    @objc func goBackToMain() {
-        self.dismiss(animated: true, completion: nil)
-    }
 }
 // MARK: - extension
 extension CharacterDetailsController {
-    
+    //MARK: - Image
+    func setupLogoImageView() {
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.image = UIImage(named: "logo-black")
+        logoImageView.frame.size = CGSize(width: 46, height: 44)
+        logoImageView.contentMode = .scaleAspectFill
+        logoImageView.clipsToBounds = true
+        view.addSubview(logoImageView)
+        
+        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -44),
+            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+        ])
+    }
     //MARK: - Image
     func setupImageView() {
         imageCharacterImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -109,9 +112,40 @@ extension CharacterDetailsController {
             cameraButton.widthAnchor.constraint(equalToConstant: 32)
         ])
     }
+//    @objc func cameraButtonTap(_ sender: UITapGestureRecognizer) {
+//        delegate?.cameraButtonTap()
+//        print(#function)
+//    }
+    
+    
+    
     @objc func cameraButtonTap(_ sender: UITapGestureRecognizer) {
-        delegate?.cameraButtonTap()
+        let alertController = UIAlertController(title: "Выберите действие", message: "Хотите сделать фото или выбрать из галереи?", preferredStyle: .actionSheet)
+
+        let takePhotoAction = UIAlertAction(title: "Сделать фото", style: .default) { (_) in
+            self.handleTakePhoto()
+        }
+
+        let chooseFromGalleryAction = UIAlertAction(title: "Выбрать из галереи", style: .default) { (_) in
+            self.handleChooseFromGallery()
+        }
+
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+
+        alertController.addAction(takePhotoAction)
+        alertController.addAction(chooseFromGalleryAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
         print(#function)
+    }
+
+    private func handleTakePhoto() {
+        // Код для запуска камеры
+    }
+
+    private func handleChooseFromGallery() {
+        // Код для доступа к галерее
     }
     //MARK: - Name
     func setupNameCharacterLabel() {

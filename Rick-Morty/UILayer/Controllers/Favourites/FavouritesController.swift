@@ -13,20 +13,9 @@ class FavouritesController: UIViewController {
     //MARK: - Properties
     private var collectionView: UICollectionView!
     
-    //var episodeModel = EpisodeModel()
+    var viewModel: FavouritesViewModelDelegate?
     var pressedCellItems = 0
-    
-    var favouritesViewOutput: FavouritesViewOutput!
-    
-    //MARK: - Init
-    init(favouritesViewOutput: FavouritesViewOutput!) {
-        self.favouritesViewOutput = favouritesViewOutput
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     //MARK: - Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +61,7 @@ extension FavouritesController: UICollectionViewDelegate {
         print(indexPath.row)
       
         navigationController?.pushViewController(CharacterDetailsController(), animated: true)
-        //navigationController?.setNavigationBarHidden(false, animated: true)
+        
         collectionView.reloadData()
 
     }

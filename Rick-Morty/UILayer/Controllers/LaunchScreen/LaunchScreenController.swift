@@ -8,21 +8,16 @@
 import UIKit
 
 final class LaunchScreenController: UIViewController {
+    enum Event {
+        case launchComplete
+    }
     
     //MARK: - Properties
+    var didSendEventHandler: ((LaunchScreenController.Event) -> Void)?
+    //weak var launchScreenCoordinator: LaunchScreenCoordinator!
     private let logoImageView = UIImageView()
     private let loadingComponentImageView = UIImageView()
-    var launchScreenViewOutput: LaunchScreenViewOutput!
-    
-    //MARK: - Init
-    init(launchScreenViewOutput: LaunchScreenViewOutput!) {
-        self.launchScreenViewOutput = launchScreenViewOutput
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+   
     //MARK: - Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +58,8 @@ final class LaunchScreenController: UIViewController {
             UIView.animate(withDuration: 1.5, delay: 0.0, options: .curveLinear, animations: {
                 self.loadingComponentImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi*2))
             }, completion: { isFinished in
-                print("End animation")
-                self.launchScreenViewOutput.launchScreenViewFinish()
+                self.didSendEventHandler?(.launchComplete)
+ //               self.launchScreenViewOutput.launchScreenViewFinish()
             })
         })
     }

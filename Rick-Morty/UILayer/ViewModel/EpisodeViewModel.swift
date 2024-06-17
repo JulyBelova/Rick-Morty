@@ -6,3 +6,11 @@
 //
 
 import Foundation
+protocol EpisodeViewModelDelegate: AnyObject {
+    
+}
+final class EpisodeViewModel: EpisodeViewModelDelegate {
+    init(_ dependencies: DependenciesProtocol) {
+       
+    }
+}

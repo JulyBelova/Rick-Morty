@@ -15,16 +15,19 @@ class EpisodesController: UIViewController {
     private let filtersButton = UIButton()
     private var collectionView: UICollectionView!
     
-    var episodesViewOutput: EpisodesViewOutput!
+    //weak var coordinator: EpisodesCoordinator!
+    var viewModel: EpisodeViewModelDelegate? 
     
-    //MARK: - Init
-    init(episodesViewOutput: EpisodesViewOutput!) {
-        self.episodesViewOutput = episodesViewOutput
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    var episodesViewOutput: EpisodesViewOutput!
+//    
+//    //MARK: - Init
+//    init(episodesViewOutput: EpisodesViewOutput!) {
+//        self.episodesViewOutput = episodesViewOutput
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     //MARK: - Live cycle
     override func viewDidLoad() {
@@ -35,11 +38,10 @@ class EpisodesController: UIViewController {
     //MARK: - Methods - setupUI
     func setupUI() {
         view.backgroundColor = .white
-        
         setupLogoImageView()
         setupSearchTextField()
         setupFiltersButton()
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -124,14 +126,16 @@ extension EpisodesController: UICollectionViewDataSource {
         //cell.backgroundColor = .systemPink
         return cell
     }
+   
 }
+
 // MARK: - UICollectionViewDelegate
 extension EpisodesController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
       
-        navigationController?.show(CharacterDetailsController(), sender: true)
-        
+        navigationController?.pushViewController(CharacterDetailsController(), animated: true)
+
         collectionView.reloadData()
 
     }
